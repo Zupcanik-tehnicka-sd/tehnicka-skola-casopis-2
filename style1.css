@@ -1,0 +1,269 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: powderblue !important;
+}
+
+.book {
+    position: relative;
+    width: 350px;
+    height: 500px;
+    transition: transform 0.5s;
+}
+
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+}
+
+.front,
+.back {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 3px solid powderblue;
+}
+
+.back {
+    z-index: 0;
+}
+
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-content {
+    transform: rotateY(180deg);
+}
+
+/* Paper flip effect */
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg);
+}
+
+/* Controller Buttons */
+button {
+    max-width: 157px;
+    max-height: 116px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.5s;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover i {
+    color: #636363;
+}
+
+i {
+    font-size: 50px;
+    color: gray;
+}
+
+/* Paper stack order */
+#p1 {
+    z-index: 20;
+}
+
+#p2 {
+    z-index: 19;
+}
+
+#p3 {
+    z-index: 18;
+}
+
+#p4 {
+    z-index: 17;
+}
+
+#p5 {
+    z-index: 16;
+}
+
+#p6 {
+    z-index: 15;
+}
+
+#p7 {
+    z-index: 14;
+}
+
+#p8 {
+    z-index: 13;
+}
+
+#p9 {
+    z-index: 12;
+}
+
+#p10 {
+    z-index: 11;
+}
+
+#p11 {
+    z-index: 10;
+}
+
+#p12 {
+    z-index: 9;
+}
+
+#p13 {
+    z-index: 8;
+}
+
+#p14 {
+    z-index: 7;
+}
+
+#p15 {
+    z-index: 6;
+}
+
+#p16 {
+    z-index: 5;
+}
+
+#p17 {
+    z-index: 4;
+}
+
+#p18 {
+    z-index: 3;
+}
+
+#p19 {
+    z-index: 2;
+}
+
+#p20 {
+    z-index: 1;
+}
+
+img {
+    max-width: 350px;
+    max-height: 500px;
+}
+
+/* Make book responsive */
+.book {
+    width: 90vw;
+    max-width: 350px;
+    height: auto;
+    aspect-ratio: 7 / 10;
+}
+
+/* Make image fully responsive */
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+
+    body {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    i {
+        font-size: 30px;
+    }
+
+    .book {
+        width: 50vw;
+    }
+
+    img {
+        max-width: 50vw;
+    }
+
+    button {
+        max-width: 50px;
+        margin: 50px;
+    }
+}
+
+/* Phone adjustments */
+@media (max-width: 600px) {
+
+    body {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .book {
+        width: 50vw;
+    }
+
+    button {
+        max-width: 50px;
+        margin: 5px;
+    }
+
+    i {
+        font-size: 32px;
+    }
+
+    img {
+        width: 50vw;
+    }
+
+    #prev-btn,
+    #next-btn {
+        transform: none !important;
+    }
+}
+
+.kontejer_za_casopise {
+    display: block;
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: large;
+    font-weight: bold;
+}
+
+.dropdown-item {
+    padding: 12px 20px;
+    font-size: 1.2rem;
+}
